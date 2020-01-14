@@ -18,6 +18,14 @@ export default class List extends Vue {
         this.listItems = [
             { id: 1, description: 'test', dueDate: 'tomorrow' },
         ]
-    }
-}
+    };
+};
 </script>
+
+<style>
+  li {
+    display: table;
+    margin: 0 auto;
+   font-family: Arial, Helvetica, sans-serif;
+  };
+</style>

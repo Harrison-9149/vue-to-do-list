@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 import ToDoList from '@/views/todo-list.vue'
 import List from '@/components/list.vue';
+import sidebar  from '@/components/sidebar.vue'
 
 Vue.use(VueRouter);
 
@@ -10,7 +11,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: sidebar,
   },
   {
     path: '/todo',
