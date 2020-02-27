@@ -1,6 +1,6 @@
-  
+$primary: #79B4A9;
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import "~bulma/sass/utilities/initial-variables";
-@import "utils/_all";
 @import "~buefy/src/scss/buefy-build.scss";
-@import "to-do-list";
+@import 'utils/components/new-todo';

@@ -3,7 +3,6 @@
     <b-input
       placeholder="What needs to be done?"
       rounded
-      class="item-field"
       v-model="todoItem"
     >
     </b-input>
@@ -21,23 +20,6 @@
   </div>
 </template>
 
-<style scoped>
-div {
-    padding: 5px;
-  }
-
-  input.item-field, textarea {
-    font-size: 16px;
-    background: #BDE4A8;
-  }
-
-  .add-item-button {
-    width: 50%;
-    font-size: 16px;
-    background-color: #BDE4A8;
-  }
-</style>
-
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 
@@ -45,6 +27,9 @@ import { Vue, Component } from 'vue-property-decorator';
 
 export default class newTodo extends Vue {
   private todoItem: string | null = null;
+
+  private addItem(): void {
+  }
 }
 
 </script>
