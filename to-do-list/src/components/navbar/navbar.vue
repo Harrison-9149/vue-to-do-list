@@ -1,6 +1,5 @@
 <template>
   <nav class="navbar">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
         <i class="material-icons">

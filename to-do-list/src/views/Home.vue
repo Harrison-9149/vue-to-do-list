@@ -1,30 +1,41 @@
 <template>
   <div class="home">
-    <div class="navbar">
-      <navbar />
+    <div class="title">
+      <h1>
+        My Todo List
+      </h1>
     </div>
-    <div class="action-bar">
-      <action-bar />
-    </div>
-    <br>
-    <div class="todo">
-      <todo />
-    </div>
+    <new-todo />
   </div>
 </template>
 
+<style scoped>
+
+  .title {
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .new-todo {
+    margin: auto;
+    display: block;
+    width: 50%;
+  }
+
+  .home {
+    background-color: #79B4A9;
+  }
+
+</style>
+
 <script>
 // @ is an alias to /src
-import navbar from '@/components/navbar/navbar.vue';
-import todo from '@/components/to-do-list/to-do-list.vue';
-import actionBar from '@/components/action-bar/action-bar.vue';
+import newTodo from '@/components/to-do-list/new-todo.vue';
 
 export default {
   name: 'Home',
   components: {
-    navbar,
-    todo,
-    actionBar,
+    newTodo,
   },
 };
 </script>
