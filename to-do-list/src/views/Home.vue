@@ -33,7 +33,7 @@
 <script>
 // @ is an alias to /src
 import newTodo from '@/components/to-do-list/new-todo.vue';
-import todoList from '@/components/to-do-list/to-do-list.vue';
+import todoList from '@/components/to-do-list/todo-list.vue';
 
 export default {
   name: 'Home',

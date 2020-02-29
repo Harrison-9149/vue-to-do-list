@@ -1,6 +1,7 @@
 <template>
   <div class="new-todo">
     <b-input
+      class="todo-item-input"
       placeholder="What needs to be done?"
       rounded
       v-model="todoItem"
@@ -10,13 +11,10 @@
       rounded
       class="add-item-button"
       size="is-small"
-      @click="addItem"
+      @click="addTodo"
     >
       Submit
     </b-button>
-    <div class="output">
-      {{ todoItem }}
-    </div>
   </div>
 </template>
 
@@ -26,9 +24,11 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component
 
 export default class newTodo extends Vue {
-  private todoItem: string | null = null;
+  private todoItem: string = '';
+  private todos: Array<string> = [];
 
-  private addItem(): void {
+  private addTodo(): void {
+    this.todos.push(this.todoItem);
   }
 }
 

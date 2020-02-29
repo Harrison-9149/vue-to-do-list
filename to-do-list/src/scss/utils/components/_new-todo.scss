@@ -1,11 +1,22 @@
 input.item-field, textarea {
   font-size: 16px;
-  background: #BDE4A8;
+  font-family: 'Courier New', Courier, monospace;
+
 }
 
 .add-item-button {
   width: 50%;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
-  background-color: #BDE4A8;
+  background-color: $secondary;
   margin: 15px;
+}
+
+.todo-item-input {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#todo-list {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
 }
