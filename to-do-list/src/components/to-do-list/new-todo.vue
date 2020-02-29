@@ -4,7 +4,7 @@
       class="todo-item-input"
       placeholder="What needs to be done?"
       rounded
-      v-model="todoItem"
+      v-model="name"
     >
     </b-input>
     <b-button
@@ -19,16 +19,16 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 
 export default class newTodo extends Vue {
-  private todoItem: string = '';
-  private todos: Array<string> = [];
+  private name: string = '';
 
   private addTodo(): void {
-    this.todos.push(this.todoItem);
+    this.$emit('todoAdded', this.name);
+    this.name = '';
   }
 }
 
