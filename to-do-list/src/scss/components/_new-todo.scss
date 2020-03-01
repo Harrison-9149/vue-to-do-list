@@ -2,11 +2,19 @@ input.item-field, textarea {
   font-size: 16px;
 }
 
-.add-item-button {
+.submit {
   width: 50%;
   font-size: 16px;
   background-color: $secondary;
-  margin: 15px;
+  margin: 10px;
+}
+
+.detail-input {
+  margin: 5px;
+}
+
+.is-required {
+  margin: 5px;
 }
 
 #todo-list {
