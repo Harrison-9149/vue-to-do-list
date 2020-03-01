@@ -27,12 +27,13 @@ import { TodoItem } from '@/shared/todo-item';
 export default class Home extends Vue {
   private todos: Array<TodoItem> = new Array<TodoItem>();
 
-  private addTodo(name: string): void {
+  private addTodo(name: string, description: string | null, required: boolean): void {
     const item = {
       id: '1',
       name: name,
       completed: false,
-      required: null,
+      description: description,
+      required: required,
     } as TodoItem;
 
     this.todos.push(item);

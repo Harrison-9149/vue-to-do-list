@@ -1,10 +1,12 @@
 <template>
   <div class="todo-list">
     <div class="columns is-centered">
-      <div class="column is-half">
+      <div class="column is-half is-left">
         <ul class="list">
           <li class="list-item" v-for="item in todos" :key="item.id">
-            {{ item.name }}
+            Name: {{ item.name }}
+            Description: {{ item.description }}
+            Required: {{ item.required }}
           </li>
         </ul>
       </div>
