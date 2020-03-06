@@ -1,6 +1,14 @@
 <template>
   <div class="new-todo">
     <div class="task-details">
+      <b-button
+        rounded
+        class="submit"
+        size="is-small"
+        @click.native="showAddTaskDialog"
+      >
+        Add New Task
+      </b-button>
       <ValidationObserver v-slot="{ handleSubmit }">
         <form>
           <validationProvider name="name" rules="required" v-slot="{ errors }">
@@ -68,6 +76,10 @@ export default class newTodo extends Vue {
     this.name = null;
     this.description = null;
     this.required = false;
+  }
+
+  private showAddTaskDialog(): void {
+    this.$emit('show-add-task-dialog');
   }
 
   private mounted(): void {
