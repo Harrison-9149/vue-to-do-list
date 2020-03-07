@@ -10,7 +10,7 @@
     <div class="modal-card">
       <ValidationObserver v-slot="{ handleSubmit }">
         <header class="modal-card-head">
-          <p class="modal-card-title"><b-icon icon="map-marker-outline"></b-icon>&nbsp;Add New Task</p>
+          <p class="modal-card-title">Add New Task</p>
         </header>
         <section class="modal-card-body">
           <div class="columns is-centered">
@@ -80,7 +80,7 @@ private description: string | null = null;
 private required: boolean = false;
 
 private addTask(): void {
-  this.$emit('todoAdded', this.name, this.description, this.required);
+  this.$emit('todo-added', this.name, this.description, this.required);
   this.name = null;
   this.description = null;
   this.required = false;

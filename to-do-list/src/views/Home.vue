@@ -5,7 +5,8 @@
         Todo List
       </h1>
     </div>
-    <sidebar />
+    <sidebar @show-add-task-dialog="onAddTaskDialogShown" />
+    <add-task-dialog v-if="newAddTaskDialogVisible" @todo-added="addTodo" @close="onClose" />
     <todo-list v-if="hasTodos" :todos="todos" />
   </div>
 </template>
@@ -30,9 +31,31 @@ import { TodoItem } from '@/shared/todo-item';
 
 export default class Home extends Vue {
   private todos: Array<TodoItem> = new Array<TodoItem>();
+  private newAddTaskDialogVisible = false;
 
   private get hasTodos(): boolean {
     return this.todos.length > 0;
+  }
+
+  private onClose(): void {
+    this.newAddTaskDialogVisible = false;
+  }
+
+  private addTodo(name: string, description: string | null, required: boolean): void {
+    this.newAddTaskDialogVisible = false;
+    const item = {
+      id: '1',
+      name: name,
+      completed: false,
+      description: description,
+      required: required,
+    } as TodoItem;
+
+    this.todos.push(item);
+  }
+
+  private onAddTaskDialogShown(): void {
+    this.newAddTaskDialogVisible = true;
   }
 };
 </script>
