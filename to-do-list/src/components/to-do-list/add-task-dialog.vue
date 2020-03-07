@@ -15,6 +15,38 @@
         <section class="modal-card-body">
           <div class="columns is-centered">
             <div class="column">
+              <form>
+                <validationProvider name="name" rules="required" v-slot="{ errors }">
+                  <b-field
+                    label="Task name"
+                    :type="{ 'is-danger': errors[0] }"
+                    :message="errors"
+                  >
+                    <b-input
+                      class="detail-input todo-name-input"
+                      placeholder="Enter a name for the task"
+                      rounded
+                      v-model="name"
+                    >
+                    </b-input>
+                  </b-field>
+                </validationProvider>
+                <b-field label="Task description">
+                  <b-input
+                    class="detail-input todo-description-input"
+                    placeholder="Enter a description for the task"
+                    rounded
+                    v-model="description"
+                  >
+                  </b-input>
+                </b-field>
+                <b-switch
+                  class="is-required"
+                  v-model="required"
+                >
+                  Is this a required task?
+                </b-switch>
+              </form>
             </div>
           </div>
         </section>

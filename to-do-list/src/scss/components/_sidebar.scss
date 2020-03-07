@@ -1,0 +1,12 @@
+.sidebar {
+    background-color: grey;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    margin: 15px;
+    padding: 10px;
+
+    .new-todo-button {
+        align-content: flex-start;
+    }
+}

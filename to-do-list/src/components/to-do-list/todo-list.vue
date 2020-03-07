@@ -17,6 +17,8 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import newTodo from '@/components/to-do-list/new-todo.vue';
+import addTaskDialog from '@/components/to-do-list/add-task-dialog.vue';
+import sidebar from '@/components/to-do-list/sidebar.vue';
 import { TodoItem } from '@/shared/todo-item';
 
 @Component
