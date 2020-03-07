@@ -1,5 +1,8 @@
 <template>
   <div class="sidebar">
+    <p class="sidebar-title">
+      Actions
+    </p>
     <new-todo class="new-todo-button" @show-add-task-dialog="onAddTaskDialogShown" :visible="onAddTaskDialogShown" />
   </div>
 </template>

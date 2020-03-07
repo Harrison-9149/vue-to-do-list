@@ -1,26 +1,10 @@
-input.item-field, textarea {
-  font-size: 16px;
+.button.is-primary {
+  &:hover {
+    color: $secondary;
+
+  }
 }
 
-.submit {
-  width: 50%;
-  font-size: 16px;
-  background-color: $secondary;
-  margin: 10px;
-}
-
-.detail-input {
-  margin: 5px;
-}
-
-.is-required {
-  margin: 5px;
-}
-
-.add-new-task {
-  float: left;
-}
-
-#todo-list {
-  text-align: left;
+.sidebar-title {
+  margin-bottom: 10px;
 }

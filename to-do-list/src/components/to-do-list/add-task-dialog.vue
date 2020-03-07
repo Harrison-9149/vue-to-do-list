@@ -36,6 +36,7 @@
                     class="detail-input todo-description-input"
                     placeholder="Enter a description for the task"
                     rounded
+                    type="textarea"
                     v-model="description"
                   >
                   </b-input>
@@ -78,12 +79,14 @@ private isComponentModalActive: boolean = true;
 private name: string | null = null;
 private description: string | null = null;
 private required: boolean = false;
+private completed: boolean = false;
 
 private addTask(): void {
-  this.$emit('todo-added', this.name, this.description, this.required);
+  this.$emit('todo-added', this.name, this.description, this.required, this.completed);
   this.name = null;
   this.description = null;
   this.required = false;
+  this.completed = false;
   this.isComponentModalActive = false;
 }
 private mounted(): void {
