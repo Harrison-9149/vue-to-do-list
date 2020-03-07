@@ -7,7 +7,8 @@
     </div>
     <sidebar @show-add-task-dialog="onAddTaskDialogShown" />
     <add-task-dialog v-if="newAddTaskDialogVisible" @todo-added="addTodo" @close="onClose" />
-    <todo-list v-if="hasTodos" :todos="todos" />
+    <amend-task-dialog v-if="newAmendTaskDialogVisible" @close="onClose" :todoItem="selectedTask" />
+    <todo-list v-if="hasTodos" :todos="todos" @show-amend-task-dialog="onAmendTaskDialogShown" />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import { Vue, Component } from 'vue-property-decorator';
 import newTodo from '@/components/to-do-list/new-todo.vue';
 import todoList from '@/components/to-do-list/todo-list.vue';
 import addTaskDialog from '@/components/to-do-list/add-task-dialog.vue';
+import amendTaskDialog from '@/components/to-do-list/amend-task-dialog.vue';
 import sidebar from '@/components/to-do-list/sidebar.vue';
 import { TodoItem } from '@/shared/todo-item';
 
@@ -26,12 +28,15 @@ import { TodoItem } from '@/shared/todo-item';
     newTodo,
     todoList,
     addTaskDialog,
+    amendTaskDialog,
   },
 })
 
 export default class Home extends Vue {
   private todos: Array<TodoItem> = new Array<TodoItem>();
   private newAddTaskDialogVisible = false;
+  private newAmendTaskDialogVisible = false;
+  private selectedTask: TodoItem | null = null;
 
   private get hasTodos(): boolean {
     return this.todos.length > 0;
@@ -39,6 +44,8 @@ export default class Home extends Vue {
 
   private onClose(): void {
     this.newAddTaskDialogVisible = false;
+    this.newAmendTaskDialogVisible = false;
+    this.selectedTask = null;
   }
 
   private addTodo(name: string, description: string | null, required: boolean): void {
@@ -56,6 +63,11 @@ export default class Home extends Vue {
 
   private onAddTaskDialogShown(): void {
     this.newAddTaskDialogVisible = true;
+  }
+
+  private onAmendTaskDialogShown(todoItem: TodoItem): void {
+    this.selectedTask = todoItem;
+    this.newAmendTaskDialogVisible = true;
   }
 };
 </script>
