@@ -1,0 +1,12 @@
+.sidebar {
+  height: 87.5%;
+  width: 200px;
+	position: fixed;
+	margin: 10px;
+  z-index: 1;
+  left: 0;
+  background-color: $secondary;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}

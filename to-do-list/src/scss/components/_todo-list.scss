@@ -1,0 +1,22 @@
+.list-item {
+    background-color: $secondary;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0.3rem 0.3rem $grey-lighter;
+        transform: scale(1.02);
+    }
+
+    &.completed {
+        text-decoration: line-through;
+    }
+    .checkbox {
+        height: 40px;
+    }
+
+}
+
+.todo-list {
+    margin: 15px;
+    padding: 20px;
+}

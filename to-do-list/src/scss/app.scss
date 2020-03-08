@@ -1,0 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import "~bulma/sass/utilities/initial-variables";
+@import 'utils/variables.scss';
+@import "~buefy/src/scss/buefy-build.scss";
+@import "components/new-todo";
+@import "components/Home";
+@import "components/todo-list";
+@import "components/sidebar";
+@import "components/modal";
+
+#app {
+    font-family: 'Comfortaa';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  #nav {
+    padding: 30px;
+  
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+  
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+    }
+  }
+$primary: #79B4A9;
+   

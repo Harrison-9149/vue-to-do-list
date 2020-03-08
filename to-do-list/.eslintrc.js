@@ -49,6 +49,7 @@ module.exports = {
     'no-useless-constructor': 'off',
     'no-console': 'error',
     'no-debugger': 'error',
+    'no-unused-vars': 'off',
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
