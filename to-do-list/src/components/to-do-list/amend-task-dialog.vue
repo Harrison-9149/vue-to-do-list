@@ -53,7 +53,7 @@
         </section>
         <footer class="modal-card-foot">
           <button class="button has-margin-left-auto" type="button" @click="$emit('close')">Close</button>
-          <button class="button is-primary" @click="handleSubmit(addTask)">Add Task</button>
+          <button class="button is-primary" @click="handleSubmit(addTask)">Amend Task</button>
         </footer>
       </ValidationObserver>
     </div>
@@ -82,14 +82,6 @@ export default class amendTaskDialog extends Vue {
   private isComponentModalActive: boolean = true;
 
   private mounted(): void {
-    /* this.newTodoItem = {
-      id: this.item.id,
-      name: this.item.name,
-      completed: this.item.completed,
-      required: this.item.required,
-      description: this.item.description,
-    } as TodoItem; */
-
     this.newTodoItem = { ...this.item };
 
     extend('required', {
