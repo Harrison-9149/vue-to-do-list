@@ -3,7 +3,7 @@
     <div class="columns is-centered">
       <div class="column is-half">
         <ul class="list">
-          <li class="list-item" v-for="item in todos" :key="item.id" @dblclick="edit" :class="[item.completed ? 'completed' : '']">
+          <li class="list-item" v-for="item in todos" :key="item.id" @dblclick="edit(item)" :class="[item.completed ? 'completed' : '']">
             <div class="view">
               <b-checkbox class="checkbox" v-model="item.completed"></b-checkbox>
               Name: {{ item.name }}
@@ -26,8 +26,8 @@ import { TodoItem } from '@/shared/todo-item';
 export default class todoList extends Vue {
   @Prop({ required: true }) private todos!: Array<TodoItem>;
 
-  private edit(): void {
-    this.$emit('show-amend-task-dialog');
+  private edit(item: TodoItem): void {
+    this.$emit('show-amend-task-dialog', item);
   }
 }
 

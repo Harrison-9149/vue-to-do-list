@@ -7,7 +7,7 @@
     </div>
     <sidebar @show-add-task-dialog="onAddTaskDialogShown" />
     <add-task-dialog v-if="newAddTaskDialogVisible" @todo-added="addTodo" @close="onClose" />
-    <amend-task-dialog v-if="newAmendTaskDialogVisible" @close="onClose" :todoItem="selectedTask" />
+    <amend-task-dialog v-if="newAmendTaskDialogVisible" @close="onClose" :item="selectedTask" />
     <todo-list v-if="hasTodos" :todos="todos" @show-amend-task-dialog="onAmendTaskDialogShown" />
   </div>
 </template>
@@ -65,8 +65,8 @@ export default class Home extends Vue {
     this.newAddTaskDialogVisible = true;
   }
 
-  private onAmendTaskDialogShown(todoItem: TodoItem): void {
-    this.selectedTask = todoItem;
+  private onAmendTaskDialogShown(item: TodoItem): void {
+    this.selectedTask = item;
     this.newAmendTaskDialogVisible = true;
   }
 };

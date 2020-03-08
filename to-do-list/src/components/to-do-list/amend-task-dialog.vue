@@ -26,7 +26,7 @@
                       class="detail-input todo-name-input"
                       placeholder="Enter a name for the task"
                       rounded
-                      v-model="name"
+                      v-model="newTodoItem.name"
                     >
                     </b-input>
                   </b-field>
@@ -37,13 +37,13 @@
                     placeholder="Enter a description for the task"
                     rounded
                     type="textarea"
-                    v-model="description"
+                    v-model="newTodoItem.description"
                   >
                   </b-input>
                 </b-field>
                 <b-switch
                   class="is-required"
-                  v-model="required"
+                  v-model="newTodoIterequired"
                 >
                   Is this a required task?
                 </b-switch>
@@ -77,18 +77,20 @@ import { messages } from 'vee-validate/dist/locale/en.json';
 })
 
 export default class amendTaskDialog extends Vue {
-  @Prop({ required: true }) todoItem!: TodoItem;
+  @Prop({ required: true }) item!: TodoItem;
   private newTodoItem: TodoItem | null = null;
   private isComponentModalActive: boolean = true;
 
   private mounted(): void {
-    this.newTodoItem = {
-      id: this.todoItem.id,
-      name: this.todoItem.name,
-      completed: this.todoItem.completed,
-      required: this.todoItem.required,
-      description: this.todoItem.description,
-    } as TodoItem;
+    /* this.newTodoItem = {
+      id: this.item.id,
+      name: this.item.name,
+      completed: this.item.completed,
+      required: this.item.required,
+      description: this.item.description,
+    } as TodoItem; */
+
+    this.newTodoItem = { ...this.item };
 
     extend('required', {
       ...required,
