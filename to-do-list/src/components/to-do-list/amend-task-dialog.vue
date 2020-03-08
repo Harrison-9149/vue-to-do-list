@@ -43,7 +43,7 @@
                 </b-field>
                 <b-switch
                   class="is-required"
-                  v-model="newTodoIterequired"
+                  v-model="newTodoItem.required"
                 >
                   Is this a required task?
                 </b-switch>
